@@ -1,0 +1,89 @@
+.profile-section {
+  padding: 3rem 1.25rem 4rem;
+}
+
+.profile-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-section__panel {
+  --photo-d: min(18rem, 72vw);
+  --panel-pad-y: clamp(1.75rem, 5vw, 3rem);
+  /* Alto mínimo = círculo + padding arriba y abajo (evita que overflow:hidden recorte el círculo) */
+  --panel-block: calc(var(--photo-d) + 2 * var(--panel-pad-y));
+
+  --profile-ring-color: color-mix(
+    in srgb,
+    var(--color-accent-soft) 65%,
+    transparent
+  );
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--panel-pad-y) clamp(1.75rem, 5vw, 3rem);
+  min-height: var(--panel-block);
+  box-sizing: border-box;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: linear-gradient(
+    160deg,
+    var(--color-nav-bg) 0%,
+    var(--color-nav-elevated) 45%,
+    color-mix(in srgb, var(--color-accent) 22%, var(--color-nav-elevated)) 100%
+  );
+  border: 1px solid var(--color-nav-border);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+}
+
+.profile-section__bg-word {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: var(--font-profile-watermark);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--profile-ring-color);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Sin container queries / cqh: evitaba dependencias circulares y font-size 0 en algunos navegadores */
+.profile-section__bg-word-inner {
+  display: block;
+  /* Alto del contenedor útil ≈ --photo-d; Bebas Neue usa casi todo el cap-height */
+  font-size: calc(var(--photo-d) * 0.82);
+  line-height: 0.88;
+  transform: scaleX(0.52);
+  transform-origin: center center;
+  white-space: nowrap;
+}
+
+.profile-section__photo-ring {
+  position: relative;
+  z-index: 1;
+  width: var(--photo-d);
+  height: var(--photo-d);
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 3px solid var(--profile-ring-color);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+
+.profile-section__photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
