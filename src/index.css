@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-  --color-page-bg: #120a1f;
-  --color-nav-bg: #1c1030;
-  --color-nav-elevated: #261742;
-  --color-nav-border: color-mix(in srgb, #c4b5fd 16%, transparent);
-  --color-accent: #9333ea;
-  --color-accent-soft: #d8b4fe;
-  --color-text: #f3e8ff;
-  --color-text-muted: #c4b5fd;
-  --font-body: 'DM Sans', system-ui, sans-serif;
-  --font-display: 'Fraunces', Georgia, serif;
+  --color-page-bg: #0b1220;
+  --color-nav-bg: #111d33;
+  --color-nav-elevated: #1a2d4d;
+  --color-nav-border: color-mix(in srgb, #93c5fd 18%, transparent);
+  --color-accent: #3b82f6;
+  --color-accent-soft: #93c5fd;
+  --color-text: #eff6ff;
+  --color-text-muted: #93c5fd;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
 }
 
 *,
