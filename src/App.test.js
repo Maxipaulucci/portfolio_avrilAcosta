@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renderiza la barra de navegación', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('Portafolio')).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Perfil' })).toBeInTheDocument();
 });
